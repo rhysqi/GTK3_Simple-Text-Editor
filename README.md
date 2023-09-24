@@ -1,5 +1,5 @@
 # SAV
-Simple audio and video player in unix/unix-like platform
+Simple audio player in unix/unix-like platform
 
 # Dependencies
 - SFML v2.5
@@ -10,3 +10,4 @@ Simple audio and video player in unix/unix-like platform
 
 # Tested Platform
 - [x] FreeBSD 13
+
