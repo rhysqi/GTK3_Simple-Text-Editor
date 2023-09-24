@@ -2,7 +2,6 @@
 Simple audio and video player in unix/unix-like platform
 
 # Dependencies
-- FFMPEG v6.0
 - SFML v2.5
 
 # Toolchains
