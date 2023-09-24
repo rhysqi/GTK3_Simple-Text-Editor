@@ -1,4 +1,4 @@
-# SAV
+# Simple UAP
 Simple audio player in unix/unix-like platform
 
 # Dependencies
