@@ -1,7 +1,7 @@
 
 #include "../include/SAP.hh"
 #include "SFML/Audio/Sound.hpp"
-#include <cstdio>
+#include <stdio.h>
 
 int main() {
     // Inisialisasi SFML
