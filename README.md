@@ -6,7 +6,6 @@ Simple audio player in unix/unix-like platform
 
 # Toolchains
 - LLVM v14
-- Cmake v3.26
 
 # Tested Platform
 - [x] FreeBSD 13
