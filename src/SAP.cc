@@ -1,20 +1,22 @@
 
-#include "../include/SAV.hh"
-
-#include <iostream>
+#include "../include/SAP.hh"
+#include "SFML/Audio/Sound.hpp"
+#include <cstdio>
 
 int main() {
     // Inisialisasi SFML
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML Audio");
     sf::Music music;
+    sf::Sound sound;
 
-    // Muat file audio (misalnya, lagu MP3)
+    // Load music
     if (!music.openFromFile("../sample.ogg")) {
-        std::cerr << "Failed to load audio file" << std::endl;
+        printf("Failed to load audio file");
         return 1;
     }
 
     // Putar audio
+    music.setVolume(10.0f);
     music.play();
 
     // Loop utama
@@ -27,7 +29,7 @@ int main() {
         }
 
         // Tambahan: Hentikan audio jika tombol Escape ditekan
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             music.stop();
         }
 
