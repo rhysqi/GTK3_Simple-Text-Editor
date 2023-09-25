@@ -18,6 +18,22 @@ inline void OWindow(Display *Dsp, int Scr, int Root, int x, int y, int height, i
 	}
 }
 
+inline void Close(Display *Dsp) {
+    XCloseDisplay(Dsp);
+}
+
+inline void WMapping(Display *Dsp, Window Win) {
+    XMapWindow(Dsp, Win);
+}
+
+inline void UnMapping(Display *Dsp, Window Win) {
+    XUnmapWindow(Dsp, Win);
+}
+
+inline void DestroyWin(Display *Dsp, Window Win) {
+    XDestroyWindow(Dsp, Win);
+}
+
 
 // Data
 #ifndef DATA_H
