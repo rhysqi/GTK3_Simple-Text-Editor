@@ -14,7 +14,11 @@ inline void Check(Display *Dsp, int Scr) {
 }
 
 inline void Loop(Display *Dsp, XEvent Xe) {
-	for (;;) {
+	while (true) {
 	    XNextEvent(Dsp, &Xe);
-	}
+        if (Xe.type == ButtonPress) {
+            printf("Tombol diklik!\n");
+            break;
+        }
+    }
 }

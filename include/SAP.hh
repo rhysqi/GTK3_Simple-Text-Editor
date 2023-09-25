@@ -3,5 +3,6 @@
 
 #include "window.h"
 #include "system.h"
+#include "component.h"
 
 #endif /* SAV_HH */
