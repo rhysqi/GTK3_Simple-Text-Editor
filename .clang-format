@@ -3,26 +3,30 @@ Language: Cpp
 
 IndentWidth: 4
 UseTab: Always
-ColumnLimit: 80
+ColumnLimit: 120
 
-AlignConsecutiveAssignments: false
+AlignConsecutiveAssignments: true
 AlignConsecutiveMacros: true
 AlignConsecutiveDeclarations: true
+
+AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
 
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterStruct: true
   AfterUnion: true
   AfterEnum: true
-  AfterControlStatement: true
 
   AfterClass: false
+  AfterControlStatement: false
   AfterFunction: false
   AfterNamespace: false
 
   BeforeLambdaBody: true
   IndentBraces: true
 
-  SplitEmptyRecord: false
+  SplitEmptyRecord: true
+  SplitEmptyFunction: true
 
 NamespaceIndentation: All
