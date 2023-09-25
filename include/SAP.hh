@@ -1,7 +1,7 @@
 #ifndef SAV_HH
 #define SAV_HH
 
-#include "codec/audio.hh"
-#include "Window/Window.hh"
+#include "window.h"
+#include "system.h"
 
 #endif /* SAV_HH */

@@ -1,7 +1,9 @@
 
+#include "../include/SAP.hh"
+#include <cstdio>
 
-int main(int argc, const char *argv[]){
+int main(int argc, const char *argv[]) {
 
-  
-  return 0;
+    printf("hello\n");
+    return 0;
 }
