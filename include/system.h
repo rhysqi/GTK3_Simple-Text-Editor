@@ -18,19 +18,3 @@ inline void Loop(Display *Dsp, XEvent Xe) {
 	    XNextEvent(Dsp, &Xe);
 	}
 }
-
-inline void Close(Display *Dsp) {
-    XCloseDisplay(Dsp);
-}
-
-inline void WMapping(Display *Dsp, Window Win) {
-    XMapWindow(Dsp, Win);
-}
-
-inline void UnMapping(Display *Dsp, Window Win) {
-    XUnmapWindow(Dsp, Win);
-}
-
-inline void DestroyWin(Display *Dsp, Window Win) {
-    XDestroyWindow(Dsp, Win);
-}
