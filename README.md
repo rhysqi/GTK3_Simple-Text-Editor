@@ -8,4 +8,4 @@ Simple calculator in unix/unix-like platform. <br>
 - LLVM v14
 
 # Tested Platform
-- [x] FreeBSD 13
+- [x] Linux Mint 21
