@@ -5,7 +5,7 @@ Output = build/Program
 PKGCONF = `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0`
 
 OPT1 = -O3 -std=c++20
-OPT2 = -fstack-protector-strong
+OPT2 = -fstack-protector-strong -fno-strict-aliasing
 
 main:
 	mkdir -p build
