@@ -2,7 +2,7 @@
 Simple calculator in unix/unix-like platform. <br>
 
 # Dependencies
-- X11
+- Gtk v3
 
 # Toolchains
 - LLVM v14
