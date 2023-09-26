@@ -1,16 +1,24 @@
+#include <gtk-3.0/gdk/gdk.h>
+#include <gtk-3.0/gtk/gtk.h>
 
-#include "../include/SAP.hh"
-#include "X11/Xlib.h"
+static void activate(GtkApplication *app, gpointer user_data) {
+    GtkWidget *window;
 
-int main(int argc, const char *argv[]) {
+    window = gtk_application_window_new(app);
+    gtk_window_set_title(GTK_WINDOW(window), "Simple Calculator");
+    gtk_window_set_default_size(GTK_WINDOW(window), 400, 500);
+    gtk_window_set_resizable(GTK_WINDOW(window), 0);
+    gtk_widget_show_all(window);
+}
 
-    Display *Dsp1;
-    int Scr1 = DefaultRootWindow(Dsp1);
-    XEvent Xe;
+int main(int argc, char **argv) {
+    GtkApplication *app;
+    int		    status;
 
-    Check(Dsp1, Scr1);
+    app = gtk_application_new("org.gtk.example", G_APPLICATION_FLAGS_NONE);
+    g_signal_connect(app, "activate", G_CALLBACK(activate), NULL);
+    status = g_application_run(G_APPLICATION(app), argc, argv);
+    g_object_unref(app);
 
-    Loop(Dsp1, Xe);
-
-    return 0;
+    return status;
 }
