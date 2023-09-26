@@ -5,7 +5,7 @@ Simple calculator in unix/unix-like platform. <br>
 - Gtk v3
 
 # Toolchains
-- LLVM v14
+- gcc v11
 
 # Tested Platform
 - [x] Linux Mint 21
