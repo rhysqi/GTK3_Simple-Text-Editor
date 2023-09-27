@@ -1,6 +1,5 @@
 # Simple Text Editor
 Simple Text Editor using GTK+ 3. <br><br><br>
-![image](https://github.com/rhysqi/Simple-Text-Editor/assets/93817895/8369ace3-9327-4ec1-8f8c-200a38418c3b)
 
 
 # Dependencies
