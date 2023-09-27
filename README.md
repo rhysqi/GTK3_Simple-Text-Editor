@@ -1,5 +1,5 @@
 # Simple Calculator
-Simple calculator in unix/unix-like platform. <br>
+Simple Text Editor using GTK+ 3. <br>
 
 # Dependencies
 - Gtk v3
