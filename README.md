@@ -1,4 +1,4 @@
-# Simple Calculator
+# Simple Text Editor
 Simple Text Editor using GTK+ 3. <br>
 
 # Dependencies
