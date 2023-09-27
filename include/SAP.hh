@@ -1,6 +1,7 @@
-#ifndef SAV_HH
-#define SAV_HH
+#ifndef SAP_HH
+#define SAP_HH
 
+#include "component.h"
 #include "window.h"
 
-#endif /* SAV_HH */
+#endif /* SAP_HH */
