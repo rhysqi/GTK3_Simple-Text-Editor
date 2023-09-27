@@ -1,22 +1,20 @@
 
 #include <gtk-3.0/gdk/gdk.h>
 #include <gtk-3.0/gtk/gtk.h>
+#include <stdio.h>
 
 // Menu bar Function
-void on_new_clicked(GtkWidget *widget, gpointer data) {
-    // Tambahkan logika untuk tindakan "New" di sini
-    g_print("New button clicked\n");
+inline void on_new_clicked(GtkWidget *widget, gpointer data) {
+    printf("Hello\n");
 }
 
 // Fungsi yang akan dipanggil ketika tombol "Open" diklik
-void on_open_clicked(GtkWidget *widget, gpointer data) {
-    // Tambahkan logika untuk tindakan "Open" di sini
-    g_print("Open button clicked\n");
+inline void on_open_clicked(GtkWidget *widget, gpointer data) {
+
 }
 
-void on_save_clicked(GtkWidget *widget, gpointer data) {
-    // Tambahkan logika untuk tindakan "Save" di sini
-    g_print("Save button clicked\n");
+inline void on_save_clicked(GtkWidget *widget, gpointer data) {
+    
 }
 
 inline void menubar(GtkWidget *window, GtkWidget *box) {
@@ -42,8 +40,8 @@ inline void menubar(GtkWidget *window, GtkWidget *box) {
 
     // signal connect
     g_signal_connect(menu_item_new, "activate", G_CALLBACK(on_new_clicked), NULL);
-    g_signal_connect(menu_item_new, "activate", G_CALLBACK(on_open_clicked), NULL);
-    g_signal_connect(menu_item_new, "activate", G_CALLBACK(on_new_clicked), NULL);
+    g_signal_connect(menu_item_open, "activate", G_CALLBACK(on_open_clicked), NULL);
+    g_signal_connect(menu_item_save, "activate", G_CALLBACK(on_save_clicked), NULL);
 }
 
 // Entry Function
