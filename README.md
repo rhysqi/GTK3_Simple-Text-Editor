@@ -9,9 +9,12 @@ Simple Text Editor using GTK+ 3. <br>
 
 # Tested Platform
 - [x] Linux Mint 21
+- [x] Ubuntu 20
 
 ## Build & Run
-```
-make
-./build/Program
-```
+- ```
+  sudo apt install gcc-11 libgtk-3-0 libgtkd-3-dev
+  ```
+- ```
+  make
+  ./build/Program
