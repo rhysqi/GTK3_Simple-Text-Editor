@@ -9,6 +9,10 @@ GtkWidget *window = NULL;
 
 // Fungsi untuk membaca isi file dan menampilkannya di buffer teks
 void read_file(const char *filename) {
+    // new files function
+        if (text_buffer != NULL) {
+            gtk_text_buffer_set_text(text_buffer, "", -1);
+        }
     FILE *file = fopen(filename, "r");
     if (file) {
         char buffer[1024];
@@ -16,6 +20,7 @@ void read_file(const char *filename) {
             gtk_text_buffer_insert_at_cursor(text_buffer, buffer, -1);
         }
         fclose(file);
+        
     } else {
         g_print("Failed to open file for reading: %s\n", filename);
     }
