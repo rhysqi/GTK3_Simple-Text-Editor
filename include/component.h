@@ -5,72 +5,68 @@
 
 // Declare global variable
 GtkTextBuffer *text_buffer = NULL;
-GtkWidget *window = NULL;
+GtkWidget	  *window	   = NULL;
 
 // Fungsi untuk membaca isi file dan menampilkannya di buffer teks
 void read_file(const char *filename) {
     // new files function
-        if (text_buffer != NULL) {
-            gtk_text_buffer_set_text(text_buffer, "", -1);
-        }
-    FILE *file = fopen(filename, "r");
-    if (file) {
-        char buffer[1024];
-        while (fgets(buffer, sizeof(buffer), file) != NULL) {
-            gtk_text_buffer_insert_at_cursor(text_buffer, buffer, -1);
-        }
-        fclose(file);
-        
-    } else {
-        g_print("Failed to open file for reading: %s\n", filename);
+	if (text_buffer != NULL) {
+	    gtk_text_buffer_set_text(text_buffer, "", -1);
     }
+    FILE *file = fopen(filename, "r");
+	if (file) {
+	    char buffer[1024];
+		while (fgets(buffer, sizeof(buffer), file) != NULL) {
+		    gtk_text_buffer_insert_at_cursor(text_buffer, buffer, -1);
+		}
+	    fclose(file);
+
+	} else {
+	    g_print("Failed to open file for reading: %s\n", filename);
+	}
 }
 
 // Fungsi untuk menulis isi buffer teks ke dalam file
 void write_file(const char *filename) {
     GtkTextIter start;
     GtkTextIter end;
-    char *text;
-    
+    char	 *text;
+
     gtk_text_buffer_get_start_iter(text_buffer, &start);
     gtk_text_buffer_get_end_iter(text_buffer, &end);
-    
+
     text = gtk_text_buffer_get_text(text_buffer, &start, &end, FALSE);
-    
+
     FILE *file = fopen(filename, "w");
-    if (file) {
-        fputs(text, file);
-        fclose(file);
-    } else {
-        g_print("Failed to open file for writing: %s\n", filename);
-    }
-    
+	if (file) {
+	    fputs(text, file);
+	    fclose(file);
+	} else {
+	    g_print("Failed to open file for writing: %s\n", filename);
+	}
+
     g_free(text);
 }
 
 // Menu bar Function
 inline void on_new_clicked(GtkWidget *widget) {
-    // new files function
-    if (text_buffer != NULL) {
-        gtk_text_buffer_set_text(text_buffer, "", -1);
+	// new files function
+	if (text_buffer != NULL) {
+	    gtk_text_buffer_set_text(text_buffer, "", -1);
     }
 }
 
 inline void on_open_clicked(GtkWidget *widget) {
     // Open file function
     GtkWidget *file_chooser;
-    file_chooser = gtk_file_chooser_dialog_new("Open File",
-                                               GTK_WINDOW(window),
-                                               GTK_FILE_CHOOSER_ACTION_OPEN,
-                                               "Cancel", GTK_RESPONSE_CANCEL,
-                                               "Open", GTK_RESPONSE_ACCEPT,
-                                               NULL);
+    file_chooser = gtk_file_chooser_dialog_new("Open File", GTK_WINDOW(window), GTK_FILE_CHOOSER_ACTION_OPEN, "Cancel",
+					       GTK_RESPONSE_CANCEL, "Open", GTK_RESPONSE_ACCEPT, NULL);
 
-    if (gtk_dialog_run(GTK_DIALOG(file_chooser)) == GTK_RESPONSE_ACCEPT) {
-        char *filename;
-        filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser));
-        read_file(filename);
-        g_free(filename);
+	if (gtk_dialog_run(GTK_DIALOG(file_chooser)) == GTK_RESPONSE_ACCEPT) {
+	    char *filename;
+	    filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser));
+	    read_file(filename);
+	    g_free(filename);
     }
 
     gtk_widget_destroy(file_chooser);
@@ -79,22 +75,17 @@ inline void on_open_clicked(GtkWidget *widget) {
 inline void on_save_clicked(GtkWidget *widget) {
     // save file function
     GtkWidget *file_chooser;
-    file_chooser = gtk_file_chooser_dialog_new("Save File",
-                                               GTK_WINDOW(window),
-                                               GTK_FILE_CHOOSER_ACTION_SAVE,
-                                               "Cancel", GTK_RESPONSE_CANCEL,
-                                               "Save", GTK_RESPONSE_ACCEPT,
-                                               NULL);
+    file_chooser = gtk_file_chooser_dialog_new("Save File", GTK_WINDOW(window), GTK_FILE_CHOOSER_ACTION_SAVE, "Cancel",
+					       GTK_RESPONSE_CANCEL, "Save", GTK_RESPONSE_ACCEPT, NULL);
 
-    if (gtk_dialog_run(GTK_DIALOG(file_chooser)) == GTK_RESPONSE_ACCEPT) {
-        char *filename;
-        filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser));
-        write_file(filename);
-        g_free(filename);
+	if (gtk_dialog_run(GTK_DIALOG(file_chooser)) == GTK_RESPONSE_ACCEPT) {
+	    char *filename;
+	    filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file_chooser));
+	    write_file(filename);
+	    g_free(filename);
     }
 
     gtk_widget_destroy(file_chooser);
-
 }
 inline void menubar(GtkWidget *window, GtkWidget *box) {
 
