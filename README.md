@@ -9,3 +9,9 @@ Simple Text Editor using GTK+ 3. <br>
 
 # Tested Platform
 - [x] Linux Mint 21
+
+## Build & Run
+```
+make
+./build/Program
+```
