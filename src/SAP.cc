@@ -2,7 +2,6 @@
 #include "../include/SAP.hh"
 
 static void activate(GtkApplication *app, gpointer user_data) {
-    GtkWidget *window;
     GtkWidget *box;
 
     window = gtk_application_window_new(app);
