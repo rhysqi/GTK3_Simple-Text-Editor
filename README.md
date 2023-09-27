@@ -15,9 +15,20 @@ Simple Text Editor using GTK+ 3. <br><br><br>
 - [x] Ubuntu 20
 
 ## Build & Run
-- ```
+  ```
   sudo apt install gcc-11 libgtk-3-0 libgtk-3-dev
   ```
-- ```
+  
+- Using Makefile
+  ```
   make
   ./build/Program
+  ```
+  
+- Using CMake
+   ```
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ```
