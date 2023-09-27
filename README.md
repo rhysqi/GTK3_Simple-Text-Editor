@@ -12,7 +12,7 @@ Simple Text Editor using GTK+ 3. <br><br><br>
 
 # Tested Platform
 - [x] Linux Mint 21
-- [x] Ubuntu 20
+- [x] Ubuntu 22
 
 ## Build & Run
   ```
