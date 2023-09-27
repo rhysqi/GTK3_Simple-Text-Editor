@@ -15,7 +15,7 @@ Simple Text Editor using GTK+ 3. <br><br><br>
 
 ## Build & Run
 - ```
-  sudo apt install gcc-11 libgtk-3-0 libgtkd-3-dev
+  sudo apt install gcc-11 libgtk-3-0 libgtk-3-dev
   ```
 - ```
   make
