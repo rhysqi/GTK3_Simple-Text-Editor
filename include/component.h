@@ -6,6 +6,7 @@
 // Declare global variable
 GtkTextBuffer *text_buffer = NULL;
 GtkWidget	  *window	   = NULL;
+extern GtkApplication *app;
 
 // Fungsi untuk membaca isi file dan menampilkannya di buffer teks
 void read_file(const char *filename) {
@@ -87,7 +88,13 @@ inline void on_save_clicked(GtkWidget *widget) {
 
     gtk_widget_destroy(file_chooser);
 }
-inline void menubar(GtkWidget *window, GtkWidget *box) {
+
+// inline void on_quit_clicked(GtkWindow *window){
+//     // Quit function
+//     gtk_window_close(window);
+// }
+
+inline void menubar(GtkWidget *window, GtkWidget *box, GtkApplication *app) {
 
     GtkWidget *menu;
     menu = gtk_menu_bar_new();
@@ -101,10 +108,15 @@ inline void menubar(GtkWidget *window, GtkWidget *box) {
     GtkWidget *menu_item_save;
     menu_item_save = gtk_menu_item_new_with_label("Save");
 
+    GtkWidget *menu_item_quit;
+    menu_item_quit = gtk_menu_item_new_with_label("Quit");
+
     // Menu bar show
     gtk_menu_shell_append(GTK_MENU_SHELL(menu), menu_item_new);
     gtk_menu_shell_append(GTK_MENU_SHELL(menu), menu_item_open);
     gtk_menu_shell_append(GTK_MENU_SHELL(menu), menu_item_save);
+    gtk_menu_shell_append(GTK_MENU_SHELL(menu), menu_item_quit);
+
     gtk_container_add(GTK_CONTAINER(window), box);
     gtk_box_pack_start(GTK_BOX(box), menu, FALSE, FALSE, 0);
 
@@ -112,6 +124,8 @@ inline void menubar(GtkWidget *window, GtkWidget *box) {
     g_signal_connect(menu_item_new, "activate", G_CALLBACK(on_new_clicked), NULL);
     g_signal_connect(menu_item_open, "activate", G_CALLBACK(on_open_clicked), NULL);
     g_signal_connect(menu_item_save, "activate", G_CALLBACK(on_save_clicked), NULL);
+    g_signal_connect_swapped(menu_item_quit, "activate", G_CALLBACK(g_application_quit), app);
+    
 }
 
 // Entry Function
