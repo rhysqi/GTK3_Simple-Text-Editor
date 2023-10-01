@@ -12,7 +12,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
     box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
 
     // Showing Widgets
-    menubar(window, box);
+    menubar(window, box, app);
     entry(window, box);
     gtk_widget_show_all(window);
 }
