@@ -8,6 +8,7 @@ Simple Text Editor using GTK+ 3. <br><br><br>
 
 # Toolchains
 - gcc v11
+- LLVM v13
 - CMake v3.2x
 
 # Tested Platform
